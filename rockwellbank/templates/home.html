@@ -1,0 +1,390 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Equity Bank</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/hand-drawn-flat-design-anarchy-symbol.png' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid secOne">
+      <nav class="container navbar navbar-expand-lg  ">
+      
+        <div class="container">
+          <a href="{% url 'home' %}">
+          <img src="{% static 'images/Atlas Equity.png' %}" alt="" width="200px" class="imgFulton">
+        </a>
+          <button
+            class="navbar-toggler bg-white"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+              
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white fw-bold text-decoration-none" href="#">PERSONAL</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  text-white fw-bold text-decoration-none" href="#">SMALL BUSINESS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  text-white fw-bold text-decoration-none" href="#">COMMERCIAL</a>
+              </li>
+              <li class="nav-item text-decoration-none">
+                <a class="nav-link text-white fw-bold" href="#">INVESTMENTS</a>
+              </li>
+              <li class="nav-item text-decoration-none">
+                <a class="nav-link text-white fw-bold" href="#">EDUCATION</a>
+              </li>
+
+              <ul class="d-lg-none navbar-nav me-auto mb-2 mb-lg-0"><li class="text-decoration-none list-unstyled nav-item"><a href="#" class="text-decoration-none nav-link text-white fw-bold" >OPEN NOW</a></li>
+                <li class="text-decoration-none list-unstyled nav-item"><a href="#" class="text-decoration-none nav-link text-white fw-bold">RATES</a></li>
+                <li class="list-unstyled nav-item"><a href="#" class="text-decoration-none nav-link text-white fw-bold">LOCATIONS</a></li>
+                <li class="list-unstyled nav-item"><a href="#" class="text-decoration-none nav-link text-white fw-bold">CONTACT</a></li>
+                <li class="list-unstyled nav-item"><a href="{% url 'about' %}" class="text-decoration-none nav-link text-white fw-bold">ABOUT</a></li>
+              </ul>
+            </ul>
+
+            <span class="">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+                <li>
+                  <a href="{% url 'signin' %}">
+                  <button class="btn btn-light me-3" type="submit"><i class="fa-solid fa-lock"></i>
+                   Login
+                  </button>
+                </a>
+                </li>
+               
+              </ul>
+            </span>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <section class="sectionOne">
+      <div class="maincontent">
+       <img src="{% static 'images/Spring Gardening_Desktop.png' %}" alt="" width="100%" class="img2" >
+       <img src="{% static 'images/Spring gardening_mobile.png' %}" alt="" class="img1"
+        width="100%">
+      </div>
+       <div class="text1">
+        <h2 class="">A BANK THAT'S BIG AND SMALL IN ALL THE <span class="right"> RIGHT WAYS. </span></h2>
+       </div>
+    </section>
+    <section class="container sectionTwo">
+      <h2 class="sectionTwoh2 fw-bold">HOW CAN WE HELP YOU?</h2>
+      <div class="sectionTwoCard">
+        <div>
+          <img src="{% static 'images/svgexport-12.svg' %}" alt="" >
+          <p class="fw-bold">Personal Banking</p>
+          <a href="{% url 'about' %}" class="text-decoration-none fw-bold fxt">Learn more <i class="fa-solid fa-angles-right"></i></a>
+        </div>
+        <div>
+          <img src="{% static 'images/briefcase.svg' %}" alt="">
+          <p class="fw-bold">Small Business</p>
+          <a href="{% url 'about' %}" class="text-decoration-none fw-bold fxt">Learn more <i class="fa-solid fa-angles-right"></i></a>
+        </div>
+        <div>
+          <img src="{% static 'images/svgexport-13.svg' %}" alt="">
+          <p class="fw-bold">Commercial</p>
+          <a href="{% url 'about' %}" class="text-decoration-none fw-bold fxt">Learn more <i class="fa-solid fa-angles-right"></i></a>
+        </div>
+        <div>
+          <img src="{% static 'images/investment.svg' %}" alt="">
+          <p class="fw-bold">Investments</p>
+          <a href="{% url 'about' %}" class="text-decoration-none fw-bold fxt">Learn more <i class="fa-solid fa-angles-right"></i></a>
+        </div>
+        <div>
+          <img src="{% static 'images/svgexport-14.svg' %}" alt="">
+          <p class="fw-bold">Wealth Management</p>
+          <a href="{% url 'about' %}" class="text-decoration-none fw-bold fxt">Learn more <i class="fa-solid fa-angles-right"></i></a>
+        </div>
+        <div>
+          <img src="{% static 'images/safe.svg' %}" alt="">
+          <p class="fw-bold">Privacy and Security</p>
+          <a href="{% url 'about' %}" class="text-decoration-none fw-bold fxt">Learn more <i class="fa-solid fa-angles-right"></i></a>
+        </div>
+      </div>
+
+    </section>
+    <section class=" sectionThree">
+      <div>
+      <h1>REACH YOUR GOAL</h1>
+    </div>
+    <div class="container con3">
+      <img src="{% static 'images/Philly Skyline.png' %}" alt="" width="500px">
+      <div >
+        <h2>First Equity Bank expands across the region!</h2>
+        <p>With the Republic Bank transaction complete, First Equity Bank doubles presence in Philadelphia and New Jersey.</p>
+        <button>Read Our Press Release</button>
+      </div>
+    </div>
+
+       <section class="container con">
+        <div class="d-lg-flex first">
+          <div class="personall">
+            <img src="{% static 'images/Home Page_Personal_FLEX.png' %}" alt="" width="300px" height="300px">
+          </div>
+          <div >
+            <h2>PERSONAL BANKING</h2>
+            <p>Checking. Savings. Credit cards. Loans. All the products you want with the personal service you expect.  </p>
+            <button >Explore Personal Banking</button>
+          </div>
+        </div>
+
+        <div class="d-lg-flex second">
+          <div >
+            <h2>SIMPLY CHECKING</h2>
+            <p>Our most popular checking account offers both simplicity and the ability to manage your account wherever you are. Want to save on fees? There is no minimum daily balance requirement and no monthly maintenance fees.  </p>
+            <button >Get started</button>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="container d-lg-flex con">
+        <div class="d-lg-flex second1">
+          <div >
+            <h2>
+              COMMERCIAL BANKING</h2>
+            <p>Access a full range of enterprise financial products and services delivered one-on-one with dedicated commercial relationship managers and industry specialists.   </p>
+            <button >Discover Commercial Banking</button>
+          </div>
+        </div>
+
+        <div class="d-lg-flex first1">
+          <div class="personal2">
+            <img src="{% static 'images//Home Page_Small Biz_FLEX.png' %}" alt="" width="300px" height="300px">
+          </div>
+          <div >
+            <h2>SMALL BUSINESS BANKING</h2>
+            <p>Your small business deserves big advantages. Grow your business with banking solutions from loans to merchant services.  </p>
+            <button >Learn More</button>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="container d-lg-flex con">
+        <div class="d-lg-flex third">
+          <div class="personal3">
+            <img src="{% static 'images/Home Page_Investments_FLEX.png' %}" alt="" width="300px" height="300px">
+          </div>
+          <div >
+            <h2>INVESTMENTS</h2>
+            <p>Through First Equity Financial Advisors, you'll have guidance and access to financial solutions from stocks and mutual funds to IRAs and insurance.</p>
+            <button >Get started</button>
+          </div>
+        </div>
+
+        <div class="d-lg-flex forth">
+          
+          <div >
+            <h2>MORTGAGES</h2>
+            <p>Your dream home needs a dream mortgage. First Equity Mortgage Company offers a variety of mortgage solutions to help you make home ownership a reality. </p>
+            <button >Get started</button>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="container d-lg-flex con">
+        <div class="d-lg-flex second1">
+         
+          <div >
+            <h2>
+              CAREERS</h2>
+            <p>If you're passionate about collaboration, customer service, and building relationships, you might find a great opportunity at First Equity Bank. </p>
+            <button >Explore Oppourtunities</button>
+          </div>
+        </div>
+
+        <div class="d-lg-flex first1">
+          <div class="personal4">
+            <img src="{% static 'images/Enterprise Defense 1.png' %}" alt="" width="350px" height="300px">
+          </div>
+          <div >
+            <h2>
+              ABOUT US</h2>
+            <p>What drives First Equity Bank? Learn about our strong missions, our vision for the future, and our experienced leadership team. </p>
+            <button >Meet First Equity Bank</button>
+          </div>
+        </div>
+
+      </section>
+    </section>
+    <section class="sectionFour">
+      <img src="{% static 'images/Mobile App_Updated.png' %}" alt="" width="100%" height="400px">
+
+      <section class="container d-lg-flex con2 sectionFourTwo">
+        <div class="d-lg-flex second2">
+          
+          <div >
+            <p class="fw-bold">
+              Locations and ATMs</p>
+            <h2 class="fw-bold ">Over 200 financial centers and over 230 ATMs</h2>
+            <a href="#" class="text-decoration-none fw-bold fxt2">Find a Financial Center <i class="fa-solid fa-angles-right"></i></a>
+          </div>
+        </div>
+
+        <div class="d-lg-flex first2">
+          
+          <div >
+            <h2 class="fw-bold  text-primary right2">Bank virtually anywhere</h2>
+            <p class="fw-bold fs-6 py-3">Our mobile app brings the bank to you. Quickly and securely deposit checks, check balances, access your First Equity Bank Credit Card accounts, and track recent transactions to manage your money.</p>
+            <button class="bnt rounded">Download Now</button>
+            <a href="#" class="text-decoration-none fw-bold fxt3">Learn More <i class="fa-solid fa-angles-right"></i></a>
+          </div>
+        </div>
+
+      </section>
+    </section>
+    <section >
+      <section class="sectionFive">      
+        <div class="container d-lg-flex justify-content-between align-items-center sectionFiveText">
+        <h2>Trending Articles</h2>
+        <button class="btn  text-white bkn">Education Center</button>
+      </div>
+      <div class="container sectionFiveBody">
+      <div class="row row-cols-1 row-cols-md-3 g-4 ">
+        <div class="col">
+          <div class="card pb-1">
+            <img src="{% static 'images/Senior-woman-laptop_TN.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">7 Steps to take after your personal data is compromised online</h5>
+              <p class="card-text">If you find out that a company you do business with – or an online service that you use – has suffered a data breach, here are a few steps to take right away.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card ">
+            <img src="{% static 'images/Rising Interest Rates_TN.png' %}" class="card-img-top" alt="...">
+            <div class="card-body pb-5">
+              <h5 class="card-title fw-bold">4 ways higher interest rates impact your finance</h5>
+              <p class="card-text">Interest rates impact the cost of borrowing, lending and what American consumers pay for goods and services. Here's what to consider.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card pb-1">
+            <img src="{% static 'images/Financial Discipline_TN.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">6 ways to build financial discipline. (And reduce money stress)</h5>
+              <p class="card-text">Wish you could reduce your financial worries? Take six steps to cultivate financial discipline and create a strong, stress-free future.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+    <section class="container sectionSix ">
+      <div>
+        <img src="{% static 'images/calendarIcon.svg' %}" alt="">
+        <h2 class="fw-bold ">VISIT US</h2>
+        <p>Locate a branch near you</p>
+        <a href="" class="text-decoration-none txt">BRANCH LOCATOR <i class="fa-solid fa-angles-right"></i></a>
+      </div>
+
+      <div>
+        <img src="{% static 'images/calendarIcon.svg' %}" alt="">
+        <h2 class="fw-bold " >MESSAGE US</h2>
+        <p>Visit the contact us page</p>
+        <a href="" class="text-decoration-none txt">CONTACT FORM <i class="fa-solid fa-angles-right"></i></a>
+      </div>
+
+      <div>
+        <img src="{% static 'images/calendarIcon.svg' %}" alt="">
+        <h2 class="">CALL US</h2>
+        <p>1-800-385-8664</p>
+        <a href="" class="text-decoration-none txt">PHONE DIRECTORY <i class="fa-solid fa-angles-right"></i></a>
+      </div>
+
+      <div>
+        <img src="{% static 'images/calendarIcon.svg' %}" alt="">
+        <h2 class="">SCHEDULE MEETING</h2>
+        <p>Book an Appointment</p>
+        <a href="" class="text-decoration-none txt">APPOINTMENT FORM <i class="fa-solid fa-angles-right"></i></a>
+      </div>
+    </section>
+    <section class="container-fluid sectionSeven ">
+      <div class="container py-3">
+     <h2 >Important Disclosures</h2>
+     <div class="sectionSevenText">
+      <p>At certain places on this site, you may find links to web sites operated by or under the control of third parties. First Equity Financial Corporation or any of its subsidiaries, including Atlas Equity Bank, N.A. (which operated as the following: Atlas Equity Financial Advisors, Atlas Equity Leasing Company, Atlas Equity Private Bank, and Atlas Equity Mortgage Company) do not endorse, approve, certify, or control those external sites and do not guarantee the accuracy or completeness of the information contained on those web sites. Atlas Equity Financial Corporation or its subsidiaries may not be affiliated with organizations or third parties mentioned on the page.</p>
+      <div class="sectionSevenImg">
+        <img src="{% static 'images/fdic-member-logo-vector.png' %}" alt="" width="120px" class="me-3">
+        <img src="{% static 'images/ehl.png' %}" alt="" width="70px">
+      </div>
+     </div>
+    </div>
+     <div class="sectionSevenText2">
+      <p>Securities and Insurance Products:
+        •Not FDIC-Insured •Not Insured by any Federal Government Agency
+        • No Financial Institution Guarantee •Subject to Risk
+        •May Lose Value •Not a Deposit</p>
+     </div>
+    </section>
+    <section class="container-fluid sectionEight">
+      <div class="container sectionEightSec py-3">
+      <div>
+        <img src="{% static 'images/Atlas_Equity_3-removebg-preview.png' %}" alt="" width="200px" class="py-3">
+        <p class="text-white fw-bold">SECURITY & FRAUD INFORMATION <i class="fa-solid fa-angles-right"></i></p>
+        <P class="text-white fw-bold">ALERT US TO FRAUD ACTIVITY <i class="fa-solid fa-angles-right"></i></P>
+      </div>
+      <div>
+      <ul class="list-unstyled mt-5">
+        <li class="pb-2"><a href="#" class="text-decoration-none text-white fw-bold ">INVESTOR RELATIONS <i class="fa-solid fa-angles-right"></i></a></li>
+        <li class="pb-2"><a href="#" class="text-decoration-none text-white fw-bold">PRIVACY POLICY <i class="fa-solid fa-angles-right"></i></a></li>
+        <li class="pb-2"><a href="#" class="text-decoration-none text-white fw-bold">ABOUT FIRST EQUITY BANK <i class="fa-solid fa-angles-right"></i></a></li>
+        <li class="pb-2"><a href="#" class="text-decoration-none text-white fw-bold">CAREERS <i class="fa-solid fa-angles-right"></i></a></li>
+       </ul>
+      </div>
+      <div>
+      <button class="btn btn-warning p-2"><i class="fa-regular fa-credit-card"></i> Report Lost or Stolen Card</button>
+    </div>
+  </div>
+    </section>
+    <section class="bg-dark">
+      <div class="container nine">
+      <p class="text-white">© 2024 First Equity Financial Corporation. All rights reserved.</p>
+      <ul class="nineUl">
+        <li><a href="#">Routing Number</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Sitemap</a></li>
+      </ul>
+    </div>
+    </section>
+    </section>
+</body>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/66e072f9ea492f34bc10b39d/1i7ec28il';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+</html>

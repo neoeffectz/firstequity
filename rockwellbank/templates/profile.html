@@ -1,0 +1,246 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{% static 'images/hand-drawn-flat-design-anarchy-symbol.png' %}" type="image/x-icon">
+  <title>User Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg d-none d-lg-block b-g">
+    <div class="container navbar-container">
+  
+      <!-- Logo on the left -->
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'images/hand-drawn-flat-design-anarchy-symbol.png' %}" alt="Logo" class="navbar-logo" width="50px">
+      </a>
+  
+      <!-- Centered List Items (visible always) -->
+      <ul class="navbar-nav mx-auto   navbar-center  fw-bold ">
+        <li class="nav-item me-3 cent1">
+          <a class="nav-link text-white" href="{% url 'portfolio' %}">Overview</a>
+        </li>
+        <li class="nav-item me-3 cent1">
+          <a class="nav-link text-white" href="{% url 'transfer' %}">Transfer</a>
+        </li>
+        <li class="nav-item me-3 cent1">
+          <a class="nav-link text-white" href="{% url 'profile' %}">User Information</a>
+        </li>
+        <li class="nav-item me-3 cent1">
+          <a class="nav-link text-white" href="#">Bills</a>
+        </li>
+      </ul>
+      
+      <!-- Toggler button on the right (visible on desktop view only) -->
+      <button class="navbar-toggler d-lg-block d-none bg-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+    </div>
+  </nav>
+      
+      <!-- Sidebar (offcanvas) opening from the right - Only visible on desktop view -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+        
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav pt-3 ps-3 bg-white w-100 fw-bold text-dark">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'portfolio' %}"> Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'transfer' %}">Transfer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profile' %}">User Information</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> Mobile Payment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Quick Access</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Bills Payment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> QR Payment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cheques</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> Messages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Travel and Leisure</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Bank Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    
+    
+      <nav class="navbar d-lg-none b-g py-2">
+        <div
+          class="container-fluid d-flex justify-content-between align-items-center"
+        >
+          <!-- Button (Menu Icon) with Toggle -->
+          <button class="navbar-toggler" type="button" onclick="toggleSidebar()">
+            <span class="navbar-toggler-icon" id="navbar-toggler-icon">☰</span>
+          </button>
+    
+          <!-- Center Text -->
+          <div class="mx-auto">
+            <span class="navbar-text text-white fw-bold"> Overview </span>
+          </div>
+    
+          <!-- Image on the Right -->
+          {% for user_output in portfolio %}
+          <div>
+            <img
+              src="{{user_output.profile_image.url}}"
+              alt="Logo"
+              class="img-fluid img1"
+              width="40px"
+            />
+          </div>
+          {%endfor%}
+        </div>
+      </nav>
+     <!-- Overlay -->
+  <div id="overlay" class="overlay"></div>
+
+    
+    <!-- Sidebar -->
+      <div id="sidebar" class="bg-white">
+        <div class="bg-danger">
+          <div>
+            <a href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()">
+              <img src="{% static 'images/close-x-svgrepo-com.svg' %}" alt="Close" width="50px" class="img-fluid img1">
+            </a>
+          </div>
+        </div>
+        <ul class="navbar-nav pt-3 ps-3 bg-white w-100 fw-bold text-dark">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'portfolio' %}"> Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'transfer' %}">Transfer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}">User Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> Mobile Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Quick Access</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bills Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> QR Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Card</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cheques</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> Messages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Travel and Leisure</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bank Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+          </li>
+        </ul>
+      </div>
+
+  <!-- Profile Card -->
+  {% for user_output in portfolio %}
+  <div class="container mxx">
+    <div class="text-center">
+      <!-- Profile Picture -->
+      <img src="{{user_output.profile_image.url}}" alt="User Profile Picture" class="profile-pic">
+      
+      <!-- User Details -->
+      <h3>{{user_output.first_name}} {{user_output.last_name}}</h3>
+      <p class="text-muted">Account Number: {{user_output.account_number}}</p>
+      <p class="text-muted">Country: {{user_output.Country}}</p> 
+      <p class="text-muted">State: {{user_output.state}}</p>
+      <p class="text-muted">City: {{user_output.city}}</p>
+      <p class="text-muted">Address: {{user_output.address}}</p>
+      <p class="text-muted">Zipcode: {{user_output.zipcode}}</p>
+
+      
+
+    </div>
+  </div>
+  {% endfor %}
+  
+  <footer class="grid2 shadow d-lg-none">
+    <div>
+      <a href="{% url 'portfolio' %}" class="text-decoration-none text-dark">
+        <img src="{% static 'images/icons8-overview-50.png' %}" alt="" />
+        <p>Overview</p>
+      </a>
+    </div>
+    <div>
+      <a href="{% url 'profile' %}" class="text-decoration-none text-dark">
+        <img src="{% static 'images/icons8-user-50.png' %}" alt="" />
+        <p>User Information</p>
+      </a>
+    </div>
+    <div>
+      <a href="{% url 'transfer' %}" class="text-decoration-none text-dark">
+        <img src="{% static 'images/icons8-transfer-50.png' %}" alt="" />
+        <p>Transfer</p></a
+      >
+    </div>
+    <div>
+      <a href="{% url 'history' %}" class="text-decoration-none text-dark">
+        <img src="{% static 'images/icons8-activity-history-50.png' %}" alt="" />
+        <p>Transfer History</p>
+      </a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleSidebar() {
+   var sidebar = document.getElementById("sidebar");
+   sidebar.classList.toggle("open");
+  }
+  </script>
+</body>
+
+
+</html>
