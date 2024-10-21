@@ -202,7 +202,7 @@
     <div class="transaction-list">
         <!-- Transaction Item 1 -->
         <div class="transaction-card">
-            <p class="transaction-date fw-normal">{{transaction.transaction_date}} <span class="transaction-amount fw-bold">${{ transaction.amount_to_transfer|intcomma }}</span></p>
+            <p class="transaction-date fw-normal">{{transaction.transaction_date}} <span class="transaction-amount fw-bold">{{transaction.amount_sign}}{{ transaction.amount_to_transfer|intcomma }}</span></p>
             <p class="transaction-details fw-bold text-dark">{{transaction.account_name}} </p>
             <div class="d-flex justify-content-between align-items-center">
             <p>{{transaction.transaction_type}}</p>
