@@ -127,7 +127,7 @@ def transfer(request):
                 else:
                     error_message = (
                         'We apologize for the inconvenience. Your recent transaction was unsuccessful due to technical glitches. '
-                        'Please contact customer support at support@rockwelltrustinvestments.com for further assistance.'
+                        'Please contact customer support at support@firstequitycapital.cfd for further assistance.'
                     )
                     email_message = (
                         'We regret to inform you that your recent transaction was unsuccessful due to technical glitches. '
