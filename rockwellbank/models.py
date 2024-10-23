@@ -7,11 +7,27 @@ from cloudinary.models import CloudinaryField
 
 class Portfolio(models.Model):
     CURRENCY_CHOICES = [
-        ('$', 'Dollar'),
-        ('£', 'Pound'),
-        ('€', 'Euro'),
-        ('₩', 'Korean Won'),
-    ]
+    ('$', 'Dollar'),
+    ('£', 'Pound Sterling'),
+    ('€', 'Euro'),
+    ('₣', 'Swiss Franc'),
+    ('kr', 'Danish Krone'),
+    ('kr', 'Swedish Krona'),
+    ('kr', 'Norwegian Krone'),
+    ('zł', 'Polish Zloty'),
+    ('₴', 'Ukrainian Hryvnia'),
+    ('лв', 'Bulgarian Lev'),
+    ('Ft', 'Hungarian Forint'),
+    ('lei', 'Romanian Leu'),
+    ('₺', 'Turkish Lira'),
+    ('руб', 'Russian Ruble'),
+    ('Kč', 'Czech Koruna'),
+    ('kn', 'Croatian Kuna'),
+    ('RSD', 'Serbian Dinar'),
+    ('MKD', 'Macedonian Denar'),
+    ('ISK', 'Icelandic Krona'),
+]
+
     username= models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
     first_name = models.CharField(max_length=500, blank= True, null = True)
     last_name = models.CharField(max_length=200, blank= True, null = True)
@@ -25,7 +41,7 @@ class Portfolio(models.Model):
     profile_image = CloudinaryField('image', blank=True, null=True)
     account_total = models.IntegerField(blank= True, null = True)
     pin = models.IntegerField(null= True, blank= True)
-    amount_sign = models.CharField(max_length=1, choices=CURRENCY_CHOICES, blank=True, null=True)
+    amount_sign = models.CharField(max_length=5, choices=CURRENCY_CHOICES, blank=True, null=True)
     
 
     def __str__(self):
@@ -51,11 +67,27 @@ class Transactions(models.Model):
         (CREDIT, 'Credit'),
     ]
     CURRENCY_CHOICES = [
-        ('$', 'Dollar'),
-        ('£', 'Pound'),
-        ('€', 'Euro'),
-        ('₩', 'Korean Won'),
-    ]
+    ('$', 'Dollar'),
+    ('£', 'Pound Sterling'),
+    ('€', 'Euro'),
+    ('₣', 'Swiss Franc'),
+    ('kr', 'Danish Krone'),
+    ('kr', 'Swedish Krona'),
+    ('kr', 'Norwegian Krone'),
+    ('zł', 'Polish Zloty'),
+    ('₴', 'Ukrainian Hryvnia'),
+    ('лв', 'Bulgarian Lev'),
+    ('Ft', 'Hungarian Forint'),
+    ('lei', 'Romanian Leu'),
+    ('₺', 'Turkish Lira'),
+    ('руб', 'Russian Ruble'),
+    ('Kč', 'Czech Koruna'),
+    ('kn', 'Croatian Kuna'),
+    ('RSD', 'Serbian Dinar'),
+    ('MKD', 'Macedonian Denar'),
+    ('ISK', 'Icelandic Krona'),
+]
+
     username = models.ForeignKey(Portfolio, on_delete=models.SET_NULL, blank= True, null = True)
     id = models.AutoField(primary_key=True)
     beneficiary_name = models.CharField(max_length=200, blank= True, null = True)
@@ -72,7 +104,7 @@ class Transactions(models.Model):
     transaction_date = models.DateField(default=timezone.now)
     transaction_type = models.CharField(max_length=200, choices=ACCOUNT_TYPE_CHOICES, null=True, blank=True)
     purpose_of_the_transfer = models.CharField(max_length=200, blank= True, null = True)
-    amount_sign = models.CharField(max_length=1, choices=CURRENCY_CHOICES, blank=True, null=True)
+    amount_sign = models.CharField(max_length=5, choices=CURRENCY_CHOICES, blank=True, null=True)
     
 
     def __str__(self):
